@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="checkout" translate="label" sortOrder="10">
+            <label>Checkout</label>
+        </tab>
+        <section id="wholesale" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Wholesale</label>
+            <tab>checkout</tab>
+            <resource>Checkout_Wholesale::wholesale_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="large" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Large Wholesale</label>
+                <field id="enable_large" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="price" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order price</label>
+                </field>
+                <field id="payment" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>PaymentMethods</label>
+                    <source_model>Checkout\Wholesale\Model\Config\Source\PaymentMethods</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+            <group id="wholesalegroup" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Wholesale</label>
+                <field id="enable_wholesale" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="qty" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Quantity of goods</label>
+                </field>
+                <field id="payment_wholesale" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>PaymentMethods</label>
+                    <source_model>Checkout\Wholesale\Model\Config\Source\PaymentMethods</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="shipping_wholesale" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>ShippingMethods</label>
+                    <source_model>Checkout\Wholesale\Model\Config\Source\ShippingMethods</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
